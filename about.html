@@ -23,6 +23,61 @@
     li {
         display:inline;
     }
+    a {
+        text-decoration:none;
+    }
+    .wrap {
+        perspective:800px;
+        perspective-origin:50% 100px;
+    }
+    .cube {
+        position:relative;
+        width:200px;
+        transform-style:preserve-3d;
+    }
+    .cube div {
+        position:absolute;
+        width:200px;
+        height:200px;
+    }
+    .back {
+	transform: translateZ(-100px) rotateY(180deg);
+    }
+    .right {
+	transform: rotateY(-270deg) translateX(100px);
+	transform-origin: top right;
+	background-color:green;
+    }
+    .left {
+	transform: rotateY(270deg) translateX(-100px);
+	transform-origin: center left;
+	background-color:blue;
+    }
+    .top {
+	transform: rotateX(-90deg) translateY(-100px);
+	transform-origin: top center;
+	background-color:white;
+    }
+    .bottom {
+	transform: rotateX(90deg) translateY(100px);
+	transform-origin: bottom center;
+	background-color:yellow;
+    }
+    .front {
+	transform: translateZ(100px);
+	background-color:orange;
+    }
+    .cube {
+        animation:spin 3s linear infinite;
+    }
+    @-webkit-keyframes spin{
+        from {
+            transform:rotate(0deg);
+        }
+        to {
+            transform:rotate(360deg);
+        }
+    }
     </style>
     <body>
         <center><ul>
@@ -33,5 +88,43 @@
             <li><a href="about-hardware.html">About Hardware</a></li>
         </ul></center>
         <center><h1>About Me</h1></center>
+        <center><h2>Who Am I</h2></center>
+        <p><font size=5>Hello, my name is Justin and I am a freshman
+        at Everest, a public charter school in the Bay Area. However
+        I have been to places other than the Bay Area, some of those
+        places include Florida, Hawii, Nevada and once I even hiked
+        down the Grand Canyon.</font></p>
+        <center><h2>Favorite Things</h2></center>
+        <p><font size=5>One of my favourite things is Rubik's Cubes,
+        yep Rubik's Cubes the puzzle everyone hates because it's
+        "impossible". Well to that I say ha because I can solve it
+        in under a minute and fifteen seconds. I like Rubik's Cubes
+        for various reasons, but one of the most entertaining reasons
+        is the reactions I get from people when they see me solve
+        my Rubik's Cube and it's super fun. However that isn't the
+        only thing I enjoy doing in my freetime, I also enjoy
+        reading books because with books you can learn any subject you could ever want
+        to, that is if there is a book on the subject and you are
+        willing to devote your time to learning that subject but
+        if you want to learn the subject that's no issue.</font></p>
+        <center><h2>Hobbies</h2></center>
+        <p><font size=5>Everyone has hobbies, so I decided I might
+        as well tell you one of mine. One of my hobbies, asside from
+        coding and HTML, is playing video games, unsurprisingly.
+        I like video games because they give you a sense of a alternate
+        reaity where you aren't held down by the limits you have
+        in the real world and the competition to see who is better
+        between you and your friends and those are also some of my
+        favourite parts of video games.</font></p>
+        <center><div class="wrap">
+            <div class="cube">
+                <div class="front"></div>
+                <div class="back"></div>
+                <div class="left"></div>
+                <div class="right"></div>
+                <div class="top"></div>
+                <div class="bottom"></div>
+            </div>
+        </div></center>
     </body>
 </html>
