@@ -40,43 +40,36 @@
         width:200px;
         height:200px;
     }
+    .cube {
+        margin:auto;
+    }
     .back {
 	transform: translateZ(-100px) rotateY(180deg);
+	border:2px solid black;
     }
     .right {
 	transform: rotateY(-270deg) translateX(100px);
 	transform-origin: top right;
-	background-color:green;
+	background-color:grey;
     }
     .left {
 	transform: rotateY(270deg) translateX(-100px);
 	transform-origin: center left;
-	background-color:blue;
+	background-color:grey;
     }
     .top {
 	transform: rotateX(-90deg) translateY(-100px);
 	transform-origin: top center;
-	background-color:white;
+	background-color:grey;
     }
     .bottom {
 	transform: rotateX(90deg) translateY(100px);
 	transform-origin: bottom center;
-	background-color:yellow;
+	background-color:grey;
     }
     .front {
 	transform: translateZ(100px);
-	background-color:orange;
-    }
-    .cube {
-        animation:spin 3s linear infinite;
-    }
-    @-webkit-keyframes spin{
-        from {
-            transform:rotate(0deg);
-        }
-        to {
-            transform:rotate(360deg);
-        }
+	background-color:transparent;
     }
     </style>
     <body>
@@ -116,7 +109,7 @@
         in the real world and the competition to see who is better
         between you and your friends and those are also some of my
         favourite parts of video games.</font></p>
-        <center><div class="wrap">
+        <div class="wrap">
             <div class="cube">
                 <div class="front"></div>
                 <div class="back"></div>
@@ -125,6 +118,6 @@
                 <div class="top"></div>
                 <div class="bottom"></div>
             </div>
-        </div></center>
+        </div>
     </body>
 </html>
