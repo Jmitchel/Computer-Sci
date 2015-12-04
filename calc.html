@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <link rel="stylesheet" type="text/css" href="index.css">
+    	<title>Document</title>
+    </head>
+    <style>
+        body {
+            color:grey;
+            background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbi1TuOY8cmXhvGl4WvczRUO7nKc8ZcWfh_nsG9SJv3ctOAX1iXw");
+        }
+        ul {
+            border:15px solid;
+            border-radius:25px;
+            background-color:darkgrey;
+            padding:25px;
+            margin:0;
+            width:591px;
+        }
+        li{
+            display:inline;
+        }
+        a{
+            text-decoration:none;
+        }
+        #input1 {
+            border-radius:5px;
+        }
+        #input2 {
+            border-radius:5px;
+        }
+        #dropdown {
+            border-radius:25px;
+        }
+        #submitButton {
+            border-radius:25px;
+        }
+    </style>
+    <body>
+        <center><ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="index.html">Introduction</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="about-html.html">About HTML</a></li>
+            <li><a href="about-hardware.html">About Hardware</a></li>
+            <li><a href="info.html">Algorithms</a></li>
+            <li><a href="calc.html">Calculator</a></li>
+            <li><a href="todolist.html">To Do List</a></li>
+        </ul></center>
+        <center><input type ="text" name="input1" style="width:50px;" id="input1">
+            <select id="dropdown">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">&yen</option>
+                <option value="|">&pound</option>
+                <option value="^">^</option>
+                <option value="<">&lt</option>
+                <option value=">">&gt</option>
+            </select>
+            <input type ="text" name="input2" style="width:50px;" id="input2">
+            <input type="button" value="Calculate" id="submitButton"/>
+            <p><span id="display"></span></p>
+        <script src="calc.js" ></script></center>
+        <center><table border=1>
+            <tr>
+                <td>Symbol</td>
+                <td>Meaning</td>
+            </tr>
+            <tr>
+                <td>&yen</td>
+                <td>Power</td>
+            </tr>
+            <tr>
+                <td>&pound</td>
+                <td>Square Root</td>
+            </tr>
+            <tr>
+                <td>^</td>
+                <td>Exponent</td>
+            </tr>
+        </table></center>
+    </body>
+</html>

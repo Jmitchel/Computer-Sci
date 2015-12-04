@@ -2,6 +2,9 @@
 <html>
     <head>
         <title>About Me</title>
+        <script>
+            
+        </script>
     </head>
     <style>
     body {
@@ -14,7 +17,7 @@
         list-style-type:none;
         margin:0;
         padding:25px;
-        width:451px;
+        width:591px;
         border:15px solid;
         overflow:hidden;
         border-radius:25px;
@@ -30,46 +33,60 @@
         perspective:800px;
         perspective-origin:50% 100px;
     }
-    .cube {
+    #cube {
         position:relative;
         width:200px;
         transform-style:preserve-3d;
     }
-    .cube div {
+    #cube div {
         position:absolute;
         width:200px;
         height:200px;
     }
-    .cube {
+    #cube {
         margin:auto;
     }
-    .back {
+    #back {
 	transform: translateZ(-100px) rotateY(180deg);
-	border:2px solid black;
-    }
-    .right {
+	background-color:transparent;
+	border:1px solid;
+	}
+    #right {
 	transform: rotateY(-270deg) translateX(100px);
 	transform-origin: top right;
-	background-color:grey;
-    }
-    .left {
+	background-color:transparent;
+	border:1px solid;
+	}
+    #left {
 	transform: rotateY(270deg) translateX(-100px);
 	transform-origin: center left;
-	background-color:grey;
-    }
-    .top {
+	background-color:transparent;
+	border:1px solid;
+	}
+    #top {
 	transform: rotateX(-90deg) translateY(-100px);
 	transform-origin: top center;
-	background-color:grey;
-    }
-    .bottom {
+	background-color:transparent;
+	border:1px solid;
+	}
+    #bottom {
 	transform: rotateX(90deg) translateY(100px);
 	transform-origin: bottom center;
-	background-color:grey;
-    }
-    .front {
+	background-color:transparent;
+	border:1px solid;
+	}
+    #front {
 	transform: translateZ(100px);
 	background-color:transparent;
+	border:1px solid;
+    }
+    #cube{
+        color:blue;
+    }
+    #spinbutton{
+        border-radius:15px;
+        background-color:blue;
+        border-color:black;
     }
     </style>
     <body>
@@ -79,6 +96,9 @@
             <li><a href="about.html">About Me</a></li>
             <li><a href="about-html.html">About HTML</a></li>
             <li><a href="about-hardware.html">About Hardware</a></li>
+            <li><a href="info.html">Algorithms</a></li>
+            <li><a href="calc.html">Calculator</a></li>
+            <li><a href="todolist.html">To Do List</a></li>
         </ul></center>
         <center><h1>About Me</h1></center>
         <center><h2>Who Am I</h2></center>
@@ -109,14 +129,15 @@
         in the real world and the competition to see who is better
         between you and your friends and those are also some of my
         favourite parts of video games.</font></p>
+                <center><button type="button" onclick="" id="spinbutton">Rotate Cube</button></center><br>
         <div class="wrap">
-            <div class="cube">
-                <div class="front"></div>
-                <div class="back"></div>
-                <div class="left"></div>
-                <div class="right"></div>
-                <div class="top"></div>
-                <div class="bottom"></div>
+            <div id="cube">
+                <div id="front"><center><strong></strong></center></div>
+                <div id="back"><center><strong></strong></center></div>
+                <div id="left"><center><strong></strong></center></div>
+                <div id="right"><center><strong></strong></center></div>
+                <div id="top"><center><strong></strong></center></div>
+                <div id="bottom"><center><strong></strong></center></div>
             </div>
         </div>
     </body>

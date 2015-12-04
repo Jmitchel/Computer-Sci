@@ -14,10 +14,50 @@
             background-color:darkgrey;
             padding:25px;
             margin:0;
-            width:451px;
+            width:591px;
         }
         li {
             display:inline;
+        }
+        a {
+            text-decoration:none;
+        }
+        .container{
+            width:200px;
+            height:260px;
+            position:relative;
+            perspective:800px;
+        }
+        #card{
+            width:100%;
+            height:100%;
+            position:absolute;
+            transform-style:preserve-3d;
+            transition:transform 1s;
+        }
+        #card figure{
+            margin:0;
+            display:block;
+            position:absolute;
+            width:100%;
+            height:100%;
+            backface-visibility:hidden;
+        }
+        #card .front{
+            background:red;
+        }
+        #card .back{
+            background:blue;
+            transform:rotateY(180deg);
+        }
+        #card.flipped{
+            transform:rotateY(180deg);
+        }
+        #card{
+            transform-origin:right center;
+        }
+        #card.flipped{
+            transform:translateX(-100%) rotateY(-180deg);
         }
     </style>
     <body>
@@ -27,6 +67,16 @@
             <li><a href="about.html">About Me</a></li>
             <li><a href="about-html.html">About HTML</a></li>
             <li><a href="about-hardware.html">About Hardware</a></li>
+            <li><a href="info.html">Algorithms</a></li>
+            <li><a href="calc.html">Calculator</a></li>
+            <li><a href="todolist.html">To Do List</a></li>
         </ul></center>
+        <h1><center>About Hardware</center></h1>
+        <section class="container">
+            <div id="card">
+                <figure class="front">1</figure>
+                <figure class="back">2</figure>
+            </div>
+        </section>
     </body>
 </html>

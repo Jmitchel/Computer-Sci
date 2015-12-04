@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>To Do List</title>
+  </head>
+  <style>
+    body {
+      color:grey;
+      background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbi1TuOY8cmXhvGl4WvczRUO7nKc8ZcWfh_nsG9SJv3ctOAX1iXw");
+    }
+    ul {
+      border:15px solid;
+      border-radius:25px;
+      background-color:darkgrey;
+      padding:25px;
+      margin:0;
+      width:591px;
+    }
+    li {
+      display:inline;
+    }
+    a {
+      text-decoration:none;
+    }
+    .section {
+      display:inline-block;
+    }
+    .amount {
+      border-radius:5px;
+      width:50px;
+    }
+    .submitButton {
+      border-radius:25px;
+    }
+    .newitem {
+      border-radius:5px;
+    }
+    .editButton {
+      border-radius:25px;
+    }
+  </style>
+  <body><center>
+    <center><ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="index.html">Introduction</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="about-html.html">About HTML</a></li>
+      <li><a href="about-hardware.html">About Hardware</a></li>
+      <li><a href="info.html">Algorithms</a></li>
+      <li><a href="calc.html">Calculator</a></li>
+      <li><a href="todolist.html">To Do List</a></li>
+    </ul></center>
+
+    <header><h1>To Do List</h1></header>
+
+    <section id="section" class="section">
+    <div id="todolist"></div>
+    <form id="myform">
+      <div>
+        <div>Groceries </div>
+        <input type="text" id="newitem" class="newitem"/>
+        <input type="submit" class="submitButton"/>
+      </div>
+    </form>
+    </section>
+
+  <section id="section2" class="section">
+    <div id="todolist2"></div>
+    <form id="myform2">
+      <div>
+        <div>Homework Schedule</div>
+        <input type="text" id="newitem2" class="newitem">
+        <input type="submit" class="submitButton">
+      </div>
+    </form>
+  </section>
+    <footer>
+    </footer>
+  <script src="todolist.js"></script>
+  </center></body>
+</html>
