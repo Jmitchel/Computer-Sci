@@ -11,7 +11,7 @@
     ul {
       border:15px solid;
       border-radius:25px;
-      background-color:darkgrey;
+      background-color:darkgray;
       padding:25px;
       margin:0;
       width:591px;
@@ -21,6 +21,12 @@
     }
     a {
       text-decoration:none;
+    }
+    #edit {
+      border-radius:25px;
+    }
+    .clr {
+      border-radius:25px;
     }
     .section {
       display:inline-block;
@@ -39,7 +45,7 @@
       border-radius:25px;
     }
   </style>
-  <body><center>
+  <body id="body"><center>
     <center><ul>
       <li><a href="home.html">Home</a></li>
       <li><a href="index.html">Introduction</a></li>
@@ -55,13 +61,14 @@
 
     <section id="section" class="section">
     <div id="todolist"></div>
-    <form id="myform">
-      <div>
-        <div>Groceries </div>
-        <input type="text" id="newitem" class="newitem"/>
-        <input type="submit" class="submitButton"/>
-      </div>
-    </form>
+      <form id="myform">
+        <div>
+          <div>Groceries</div>
+          <input type="txt" id="newitem" class="newitem"/>
+          <input type="submit" class="submitButton"/>
+        </div>
+      </form>
+          <button class="clr" onClick="randomColor2()">Change Color</button>
     </section>
 
   <section id="section2" class="section">
@@ -73,8 +80,10 @@
         <input type="submit" class="submitButton">
       </div>
     </form>
+        <button class="clr" onClick="randomColor()">Change Color</button>
   </section>
     <footer>
+      Note: I will soon add something that permits you to add the quantity of items you would like to purchase or the time you will work on a sertain homework subject.
     </footer>
   <script src="todolist.js"></script>
   </center></body>
