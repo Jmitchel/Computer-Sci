@@ -16,25 +16,25 @@ item1.addEventListener("click", function(){
 //This gives you step two when you click on the second image
 item2.addEventListener("click", function(){
     info1.innerHTML = "Second Layer";
-    info2.innerHTML = "";
+    info2.innerHTML = "Right: U R U' R' U' F' U F or Left: U' L' U L U F U F'";
 });
 
 //This gives you step three when you click on the third image
 item3.addEventListener("click", function(){
     info1.innerHTML = "Yellow Cross";
-    info2.innerHTML = "";
+    info2.innerHTML = "F R U R' U' F'";
 });
 
 //This gives you step four when you click on the fourth image
 item4.addEventListener("click", function(){
     info1.innerHTML = "Yellow Corners";
-    info2.innerHTML = "";
+    info2.innerHTML = "R U R' U R U U R' U";
 });
 
 //This gives you step five when you click on the fifth image
 item5.addEventListener("click", function(){
     info1.innerHTML = "Third Layer";
-    info2.innerHTML = "After this there is just one more step, so please bear with me just a little longer.";
+    info2.innerHTML = "After this there is just one more step, so please bear with me just a little longer.<br>U R U' L' U R' U L<br>Then: R' D' R D U' R' D' R D";
 });
 
 //This gives you the final step when you click on the fifth image, it also tells you that what you feel is a insane accomplishment is actually pathetic in comparison to the feats other people have accomplished in the world of Rubik's Cubes
