@@ -2,8 +2,8 @@ var mycanvas = document.getElementById("mycanvas");
 var ctx = mycanvas.getContext("2d");
 
 var box = {
-    xPos: 20,
-    yPos: 50,
+    xPos: 210,
+    yPos: 210,
     goLeft: false,
     goRight: false,
     goUp: false,
