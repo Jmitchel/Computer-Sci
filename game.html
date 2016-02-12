@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Game</title>
+    </head>
+    <style>
+        body {
+            background-color:black;
+            color:blue;
+        }
+        ul {
+            list-style-type:none;
+            padding:25px;
+            width:851px;
+            border:15px solid;
+            border-radius:25px;
+            background:black;
+        }
+        li {
+            display:inline;
+        }
+        a {
+            text-decoration:none;
+        }
+        #myCanvas {
+            background-color:black;
+        }
+        #begin {
+            border-radius:25px;
+        }
+        #start {
+            border-radius:25px;
+        }
+    </style>
+    <body>
+        <center><ul>
+            <li><a href="home.html">Home</a></li>
+            <li>|</li>
+            <li><a href="index.html">Introduction</a></li>
+            <li>|</li>
+            <li><a href="about.html">About Me</a></li>
+            <li>|</li>
+            <li><a href="about-html.html">About HTML</a></li>
+            <li>|</li>
+            <li><a href="about-hardware.html">About Hardware</a></li>
+            <li>|</li>
+            <li><a href="info.html">Algorithms</a></li>
+            <li>|</li>
+            <li><a href="calc.html">Calculator</a></li>
+            <li>|</li>
+            <li><a href="todolist.html">To Do List</a></li>
+            <li>|</li>
+            <li><a href="decoy.html">Box Game</a></li>
+            <li>|</li>
+            <li><a href="game.html">Shadow Point</a></li>
+        </ul></center>
+        <center><h1>Shadow Point</h1></center>
+        <center><canvas id="myCanvas" width="500px" height="500px" style="border: 2px solid blue"></canvas></center>
+        <center><button id="begin" onclick="restart();">Restart</button></center>
+        <center><table border=1>
+        <tr>
+            <td>Key</td>
+            <td>Key Use</td>
+        </tr>
+        <tr>
+            <td>Left Arrow</td>
+            <td>Go Left</td>
+        </tr>
+        <tr>
+            <td>Up Arrow</td>
+            <td>Go Up</td>
+        </tr>
+        <tr>
+            <td>Right Arrow</td>
+            <td>Go Right</td>
+        </tr>
+        <tr>
+            <td>Down Arrow</td>
+            <td>Go Down</td>
+        </tr>
+        <tr>
+            <td>Space Bar</td>
+            <td>Shoot</td>
+        </tr>
+        </table></center>
+        
+        <script type="text/javascript" src="game.js"></script>
+    </body>
+</html>

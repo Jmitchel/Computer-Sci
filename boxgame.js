@@ -28,7 +28,7 @@ var box = {
         ctx.rect(box.xPos,box.yPos,20,20);
         ctx.stroke();
     }
-}
+};
 
 document.addEventListener("keydown", function(evt){
     if(evt.keyCode === 37){
@@ -42,8 +42,7 @@ document.addEventListener("keydown", function(evt){
     }
     if(evt.keyCode === 40){
         box.goDown = true;        
-    }    
-    
+    }
 });
 
 document.addEventListener("keyup", function(evt){
@@ -59,7 +58,7 @@ document.addEventListener("keyup", function(evt){
     if(evt.keyCode === 40){
         box.goDown = false;        
     }    
-})
+});
 
 function gameLoop(){
     ctx.beginPath();
