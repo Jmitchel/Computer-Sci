@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        
+    </head>
+    <style>
+        body {
+            background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbi1TuOY8cmXhvGl4WvczRUO7nKc8ZcWfh_nsG9SJv3ctOAX1iXw");
+            color:gray;
+        }
+        ul {
+            list-style-type:none;
+            padding:25px;
+            width:851px;
+            border:15px solid;
+            border-radius:25px;
+            background:darkgrey;
+        }
+        li {
+            display:inline;
+        }
+        a {
+            text-decoration:none;
+        }
+        .code {
+            border:15px solid;
+            border-radius:25px;
+            background-color:black;
+        }
+    </style>
+    <body>
+        <center><ul>
+            <li><a href="home.html">Home</a></li>
+            <li>|</li>
+            <li><a href="index.html">Introduction</a></li>
+            <li>|</li>
+            <li><a href="about.html">About Me</a></li>
+            <li>|</li>
+            <li><a href="about-html.html">About HTML</a></li>
+            <li>|</li>
+            <li><a href="about-hardware.html">About Hardware</a></li>
+            <li>|</li>
+            <li><a href="info.html">Algorithms</a></li>
+            <li>|</li>
+            <li><a href="calc.html">Calculator</a></li>
+            <li>|</li>
+            <li><a href="todolist.html">To Do List</a></li>
+            <li>|</li>
+            <li><a href="game.html">Shadow Point</a></li>
+            <li>|</li>
+            <li><a href="decoy.html">Vindinium</a></li>
+        </ul></center>
+        <center><h1>Vindinium</h1></center>
+        <center><h2>What is Vindinium?</h2></center>
+        <center><img src="https://s3.amazonaws.com/poly-screenshots.angel.co/Project/a0/120663/73d89cbf74dde0cacf22233ec6dc6a79-original.png"></center>
+        <center><p>Vindinium is a game where players program AI
+        called bots to collect mines, heal, and fight the bots that other players have
+        created. To play this game you write code in JavaScript that tells your Bot to
+        do different things depending on it's surroundings. After you finish with your code
+        you enter your Bot into the Arena where it plays against other players Bots. In 
+        order for your Bot to win it must have the most gold at the end of the game. To
+        obtain gold your Bot must capture mines, mines generate one gold per mine per turn,
+        and protect them(the mines) from other players Bots.</p></center>
+        <center><h2>My Bot's Code</h2></center>
+        <code><pre class="code">var Bot = require('bot');
+var PF = require('pathfinding');
+// var = new Bot('rh91n817', 'training', http://vindinium.org);
+// var bot = new Bot('kdugq19j', 'arena', 'http://vind.alexb.io'); //Put your bot's code here and change training to Arena when you want to fight others.
+var bot = new Bot('3uo0cgep', 'arena', 'http://52.53.211.7:9000'); //Put your bot's code here and change training to Arena when you want to fight others.
+var goDir;
+var Promise = require('bluebird');
+Bot.prototype.botBrain = function() {
+    return new Promise(function(resolve, reject) {
+        _this = bot;
+        </pre></code>
+        <center><p>This code is the code that is used to determine what arena your
+        Bot will go into and what name it will be under once you put it into the arena to
+        fight against other players Bots.</p></center>
+        <code><pre class="code">        //////* Write your bot below Here *//////
+        //////* Set `myDir` in the direction you want to go and then bot.goDir is set to myDir at the bottom *////////
+
+        /*                                      *
+         * This Code is global data!            *
+         *                                      */
+
+        // Set myDir to what you want and it will set bot.goDir to that direction at the end.  Unless it is "none"
+        var myDir;
+        var myPos = [bot.yourBot.pos.x, bot.yourBot.pos.y];
+
+        var enemyBots = [];
+        if(bot.yourBot.id != 1) enemyBots.push(bot.bot1);
+        if(bot.yourBot.id != 2) enemyBots.push(bot.bot2);
+        if(bot.yourBot.id != 3) enemyBots.push(bot.bot3);
+        if(bot.yourBot.id != 4) enemyBots.push(bot.bot4);
+        </pre></code>
+        <center><p>This code sets the location of your bot, tells you what direction it's
+        going in, and tells you which Bot is your Bot and which Bots are enemies.</p></center>
+        <code><pre class="code">        /*                                      *
+         * This Code Decides WHAT to do         *
+         *                                      */
+        var task;
+
+        // This code tells the bot to go to a tavern to heal when it's health is below 50 points //
+        if(bot.yourBot.life < 50){
+            task = "taverns";
+        }else{
+            // This code tells the bot to go to a unoccupied mine if there are more than 0 mines //
+            if(bot.freeMines > 0){
+                task = "freemines";
+            }else{
+                // This code tells the bot to attack the closest enemy 
+                if(enemyBots[0].life < bot.yourBot.life){
+                    task = "attackenemies";
+                }else{
+                    myDir = "none";
+                }
+            }
+        }
+        </pre></code>
+        <center><p>Starting here is where the code starts to be more interesting. This code
+        tells my bot to go to a tavern to heal when it's health is less than fifty, if
+        it's health is above fifty then it is told to claim unoccupied mines if there
+        are more than zero unoccupied mines. If all the mines are occupied by other players
+        then my Bot will attack the nearest enemy with less health then my bot, if all enemies
+        have more health than my Bot it's direction will be set to "none". this means
+        that the computer will randomly select a direction until a enemy has less health than
+        my Bot or my Bot has less than fifty health. I made my bot do this to keep it
+        from crashing.</p></center>
+        <code><pre class="code">        /*                                      *
+         * This Code Determines HOW to do it    *
+         *                                      */
+
+        // This code locates the nearest unoccupied mine and sets my bot in that direction //
+        if(task === "freemines") {
+            var closestMine = bot.freeMines[0];
+            for(var i = 0; i < bot.freeMines.length; i++) {
+                if(bot.findDistance(myPos, closestMine) > bot.findDistance(myPos, bot.freeMines[i])) {
+                    closestMine = bot.freeMines[i];
+                }
+            }
+            console.log("Claiming a Free Mine!");
+            myDir = bot.findPath(myPos, closestMine);
+        }
+
+        // i(function() {
+        //         /* code */
+        // }());{
+        //   
+        // }
+
+        // This code locates the nearest tavern and sets my bot in that direction //
+        if(task === "taverns") {
+            var closestTavern = bot.taverns[0];
+            for(i = 0; i < bot.taverns.length; i++) {
+                if(bot.findDistance(myPos, closestTavern) > bot.findDistance(myPos, bot.taverns[i])) {
+                    closestTavern = bot.taverns[i];
+                }
+            }
+            console.log("Healing at a Tavern!");
+            myDir = bot.findPath(myPos, closestTavern);
+        }
+
+        // This code locates the nearest enemy bot and sets my bot in that direction //
+        if(task === "attackenemies") {
+            var closestEnemy = enemyBots[0].posArray;
+            for(i = 0; i < enemyBots[0].length; i++) {
+                if(bot.findDistance(myPos, closestEnemy) > bot.findDistance(myPos, enemyBots[i])) {
+                    closestEnemy = enemyBots[i].posArray;
+                }
+            }
+            console.log("Attacking an Enemy!");
+            myDir = bot.findPath(myPos, closestEnemy);
+        }
+
+        /*                                                                                                                              *
+         * This Code Sets your direction based on myDir.  If you are trying to go to a place that you can't reach, you move randomly.   *
+         * Otherwise you move in the direction set by your code.  Feel free to change this code if you want.                            */
+        if(myDir === "none") {
+            console.log("Going Random!");
+            var rand = Math.floor(Math.random() * 4);
+            var dirs = ["north", "south", "east", "west"];
+            bot.goDir = dirs[rand];
+        } else {
+            bot.goDir = myDir;
+        }
+        </pre></code>
+        <center><p>This code could be considered the most important code that my Bot has,
+        this code is what tells your bot how to do stuff like capture mines and attack enemies.
+        First, we have the code that has you go to taverns, I will now explain how it
+        all works. First, the computer is told that if the curent task is "taverns"
+        to pull up where all the taverns are in the arena that they are currently in.
+        After that there is a <a href="http://www.w3schools.com/js/js_loop_for.asp">for loop</a>
+        that keeps running the distance between all the taverns and where they are and
+        compare them to my Bots location to calculate which tavern is the closest. After
+        that it sets my Bot in the direction of whatever tavern is the closest to it.
+        The next piece of code that we have tells my Bot how to attack enemies. First,
+        we tell the computer that if the task is "attackenemies" to run the for loop that
+        calulates which enemy is the closest by comparing the position of all of the
+        enemies to the current position of my Bot. After it claculates which enemy is the
+        closest it sends my Bot in the direction of that enemy and console logs that it is
+        going to attack an enemy. Finally, we have the code that tells the bot to go
+        in a random direction if it has no direction. First, we tell the computer that if
+        my Bot has no set direction to console log "Going Random!" and then select a random
+        direction. After it randomly selects a direction it sets my Bots direction to that
+        direction.</p></center>
+        <center><h2>What I Learned About AI(Artificial Intelligence)</h2></center>
+        <center><p>The thing about AI is that it thinks on it's own and you can't control it.
+        This sometimes leads to it making stupid decisions that will make you want to bang
+        your head against the table. When you build a bot it may seem really difficult at first,
+        but when you finally figure it out it will seem simple and you will help you learn how to
+        think more like a programer. Before this project when I thought of AI I thought of
+        robots that think like humans do, but now I know that AI can be much simpler than
+        that.</p></center>
+    </body>
+</html>

@@ -5,8 +5,8 @@
     </head>
     <style>
         body {
-            background-color:black;
-            color:blue;
+            background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbi1TuOY8cmXhvGl4WvczRUO7nKc8ZcWfh_nsG9SJv3ctOAX1iXw");
+            color:gray;
         }
         ul {
             list-style-type:none;
@@ -14,7 +14,7 @@
             width:851px;
             border:15px solid;
             border-radius:25px;
-            background:black;
+            background:darkgray;
         }
         li {
             display:inline;
@@ -25,10 +25,10 @@
         #myCanvas {
             background-color:black;
         }
-        #begin {
-            border-radius:25px;
+        #start{
+            border:25px;
         }
-        #start {
+        #begin {
             border-radius:25px;
         }
     </style>
@@ -50,38 +50,64 @@
             <li>|</li>
             <li><a href="todolist.html">To Do List</a></li>
             <li>|</li>
-            <li><a href="decoy.html">Box Game</a></li>
-            <li>|</li>
             <li><a href="game.html">Shadow Point</a></li>
         </ul></center>
         <center><h1>Shadow Point</h1></center>
-        <center><canvas id="myCanvas" width="500px" height="500px" style="border: 2px solid blue"></canvas></center>
-        <center><button id="begin" onclick="restart();">Restart</button></center>
+        <center><canvas id="myCanvas" width="500px" height="500px" style="border: 2px solid gray"></canvas></center>
+        <center><button id="begin" onclick="restart()">Restart</button></center>
         <center><table border=1>
-        <tr>
-            <td>Key</td>
-            <td>Key Use</td>
-        </tr>
-        <tr>
-            <td>Left Arrow</td>
-            <td>Go Left</td>
-        </tr>
-        <tr>
-            <td>Up Arrow</td>
-            <td>Go Up</td>
-        </tr>
-        <tr>
-            <td>Right Arrow</td>
-            <td>Go Right</td>
-        </tr>
-        <tr>
-            <td>Down Arrow</td>
-            <td>Go Down</td>
-        </tr>
-        <tr>
-            <td>Space Bar</td>
-            <td>Shoot</td>
-        </tr>
+            <tr>
+                <td>Player 1 Keys</td>
+                <td>Player 1 Key Usage</td>
+            </tr>
+            <tr>
+                <td>"l" Key</td>
+                <td>Go Left</td>
+            </tr>
+            <tr>
+                <td>"i" Key</td>
+                <td>Go Up</td>
+            </tr>
+            <tr>
+                <td>"j" Key</td>
+                <td>Go Right</td>
+            </tr>
+            <tr>
+                <td>"k" Key</td>
+                <td>Go Down</td>
+            </tr>
+            <tr>
+                <td>"h" Key</td>
+                <td>Shoot</td>
+            </tr>
+            <tr>
+                <td>~~~~~~~~~~~~</td>
+                <td>~~~~~~~~~~~~~~~</td>
+            </tr>
+            <tr>
+                <td>Player 2 Keys</td>
+                <td>Player 2 Key Usage</td>
+            </tr>
+            <tr>
+                <td>"A" Key</td>
+                <td>Go Left</td>
+            </tr>
+            <tr>
+                <td>"D" Key</td>
+                <td>Go Right</td>
+            </tr>
+            <tr>
+                <td>"S" Key</td>
+                <td>Go Down</td>
+            </tr>
+            <tr>
+                <td>"W" Key</td>
+                <td>Go Up</td>
+            </tr>
+            <tr>
+                <td>Shift Key</td>
+                <td>Shoot</td>
+            </tr>
         </table></center>
         
         <script type="text/javascript" src="game.js"></script>
