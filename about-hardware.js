@@ -5,6 +5,8 @@ var hdrive = document.getElementById("hdrive");
 var monitor = document.getElementById("monitor");
 var info1 = document.getElementById("info1");
 var info2 = document.getElementById("info2");
+var info3 = document.getElementById("info3");
+var info4 = document.getElementById("info4");
 
 motherboard.addEventListener("click", function(){
     info1.innerHTML = "What is a Motherboard?";
@@ -28,5 +30,7 @@ hdrive.addEventListener("click", function(){
 
 monitor.addEventListener("click", function(){
     info1.innerHTML = "What are keyboards, mouses, and monitors?";
-    info2.innerHTML = "Keyboards are used to ";
+    info2.innerHTML = "Keyboards are used to type on computers. Keyboards have a number of keys that each correspond to a certain symbol and when that key is pressed the corresponding symbol apears on the computers monitor.";
+    info3.innerHTML = "Computer mouses are pointing devices. Computer mouses detect two-dimensional motion on a flat surface, a on-screen pointer then moves in the corresponding direction.";
+    info4.innerHTML = "Computer monitors are computer visual displays. Computer monitors are used for data processing and entertainment.";
 });
